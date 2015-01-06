@@ -1,0 +1,9 @@
+# func_homepage:
+#     path:     /hello/{name}
+#     defaults: { _controller: FuncBundle:Default:index }
+
+
+blog_front:
+    resource: "@FuncBundle/Controller/"
+    type:     annotation
+    prefix:   /

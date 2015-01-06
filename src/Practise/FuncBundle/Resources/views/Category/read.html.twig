@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block pagename %}
+<h2>Category Read</h2>
+{% endblock %}
+
+{% block body %}
+<b><a href="/category/create">Create a new category</a></b>
+<table>
+<tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Position</td>
+</tr>
+{% for category in category %}
+<tr>
+    <td>{{ category.id }}</td>
+    <td>{{ category.name }}</td>
+    <td>{{ category.description }}</td>
+    <td>{{ category.position }}</td>
+    <td><a href="/category/update/{{ category.id }}">Edit</a></td>
+    <td><a href="/category/delete/{{ category.id }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

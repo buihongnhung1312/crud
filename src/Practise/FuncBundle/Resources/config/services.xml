@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="handle.func.class">Practise\FuncBundle\FuncHandle\FuncHandle</parameter>
+        <parameter key="handle.product.class">Practise\FuncBundle\FuncHandle\ProductHandle</parameter>
+    </parameters>
+
+    <services>
+        <service id="handle.func" class="%handle.func.class%">
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+        </service>
+        <service id="handle.product" class="%handle.product.class%">
+        </service>
+
+    </services>
+</container>

@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block pagename %}
+<h2>Category Create</h2>
+{% endblock %}
+{% block body %}
+
+{{ form_start(form) }}
+
+<div> 
+    <div>        
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}        
+    </div>
+    <div>
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+    </div>
+    <div>
+        {{ form_label(form.position) }}
+        {{ form_widget(form.position) }}
+    </div>
+    <div>
+        {{ form_widget(form.save) }}
+    </div>
+</div>
+
+{{ form_rest(form) }}
+
+{{ form_end(form) }}
+
+{% endblock %}

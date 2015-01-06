@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block pagename %}
+<h2>Product Read</h2>
+{% endblock %}
+
+{% block body %}
+<b><a href="/product/create">Create a new product</a></b>
+<table>
+<tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>SKU</td>
+    <td>Description</td>
+    <td>Price</td>
+</tr>
+{% for product in product %}
+<tr>
+    <td>{{ product.id }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.sku }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.price }}</td>
+    <td><a href="/product/update/{{ product.id }}">Edit</a></td>
+    <td><a href="/product/delete/{{ product.id }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
